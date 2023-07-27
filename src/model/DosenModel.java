@@ -4,16 +4,14 @@
  * and open the template in the editor.
  */
 package model;
-
 import helper.DummyData;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author ACER
  */
-public class MahasiswaModel extends DefaultTableModel{
-    public MahasiswaModel(){
-        super(DummyData.data_Mhs,DummyData.Table_HEADER_Mhs);
+public class DosenModel extends DefaultTableModel{
+    public DosenModel(){
+        super(DummyData.data_Dosen,DummyData.Table_HEADER_Dosen);
     }
 }

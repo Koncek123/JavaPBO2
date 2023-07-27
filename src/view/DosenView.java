@@ -5,24 +5,24 @@
  */
 package view;
 
-import controller.SearchControllerMahasiswa;
-import model.MahasiswaModel;
+import controller.SearchControllerDosen;
+import model.DosenModel;
 
 /**
  *
  * @author ACER
  */
-public class MahasiswaView extends javax.swing.JFrame {
+public class DosenView extends javax.swing.JFrame {
 
     /**
      * Creates new form MahasiswaView
      */
-    public MahasiswaView() {
+    public DosenView() {
         initComponents();
-        MahasiswaModel mhs= new MahasiswaModel();
-        tblMhs.setModel(mhs);
+        DosenModel dsn= new DosenModel();
+        tblMhs.setModel(dsn);
         
-        SearchControllerMahasiswa sc= new SearchControllerMahasiswa(txtCari, mhs);
+        SearchControllerDosen sc= new SearchControllerDosen(txtCari, dsn);
         btnCari.addActionListener(sc);
     }
 
@@ -41,7 +41,6 @@ public class MahasiswaView extends javax.swing.JFrame {
         tblMhs = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1024, 600));
         setMinimumSize(new java.awt.Dimension(600, 600));
         setSize(new java.awt.Dimension(600, 600));
         getContentPane().setLayout(null);
@@ -66,7 +65,7 @@ public class MahasiswaView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblMhs);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 80, 452, 275);
+        jScrollPane1.setBounds(30, 80, 452, 402);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -88,20 +87,21 @@ public class MahasiswaView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MahasiswaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DosenView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MahasiswaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DosenView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MahasiswaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DosenView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MahasiswaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DosenView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MahasiswaView().setVisible(true);
+                new DosenView().setVisible(true);
             }
         });
     }

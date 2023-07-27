@@ -15,11 +15,11 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ACER
  */
-public class SearchController implements ActionListener{
+public class SearchControllerMahasiswa implements ActionListener{
     private JTextField search = new JTextField();
     private DefaultTableModel model;
     
-    public SearchController(JTextField search, DefaultTableModel model){
+    public SearchControllerMahasiswa(JTextField search, DefaultTableModel model){
         this.search=search;
         this.model=model;
     }
@@ -28,18 +28,18 @@ public class SearchController implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         String searchDataString= this.search.getText();
         if(searchDataString.trim().equals("*")){
-            model.setDataVector(DummyData.data, DummyData.Table_HEADER);
+            model.setDataVector(DummyData.data_Mhs, DummyData.Table_HEADER_Mhs);
             return;
         }
         
-        Object [][] newData= new Object[DummyData.data.length][];
+        Object [][] newData= new Object[DummyData.data_Mhs.length][];
         
         int index=0;
-        for(Object[] obj:DummyData.data){
+        for(Object[] obj:DummyData.data_Mhs){
             if(String.valueOf(obj[1]).toUpperCase().contains(searchDataString.toUpperCase().trim())){
                 newData[index++]=obj;
             }
-            model.setDataVector(newData, DummyData.Table_HEADER);
+            model.setDataVector(newData, DummyData.Table_HEADER_Mhs);
         }
         
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
